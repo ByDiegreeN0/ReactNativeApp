@@ -7,48 +7,30 @@ export const login = () => {
 
 
     <View style={styles.container}>
+   
       <View style={styles.content} >
         <Image  style={styles.image} source={require('../../assets/img/iglogo.png')}></Image>
-        <Text style={styles.title}>Registrate para ver fotos y videos de tus amigos</Text>
-        <Button
-          title="Iniciar sesión con Facebook"
-        />
+        <Text style={styles.title}>Inicia sesion para ver fotos y videos de tus amigos</Text>
+       
         <TextInput
           style={styles.input}
           placeholder='correo electronico'
         />
 
-        <TextInput
-          style={styles.input}
-          placeholder='Nombre Completo'
-        />
-
-        <TextInput
-          style={styles.input}
-          placeholder='Usuario'
-        />
+      
 
         <TextInput
           style={styles.input}
           placeholder='Contraseña'
         />
 
-        <Text style={styles.contentText}>
-          Es posible que los usuarios de nuestro servicio hayan subido tu información de contacto en Instagram
-        </Text>
-
-        <Text style={styles.contentText}>
-          Al registrarte, aceptas nuestras Condiciones, nuestra Política de privacidad y nuestra Política de cookies.
-        </Text>
+      
         <Button
-          title="Ingresar"
+          title="Entrar"
         />
-
       </View>
 
-      <View style={styles.bottom}>
-        <Text>¿Tienes una cuenta? Entrar</Text>
-      </View>
+  
     </View>
   )
 
@@ -64,7 +46,6 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    marginTop: 10,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -86,13 +67,6 @@ const styles = StyleSheet.create({
     padding: 15
   },
 
-  contentText: {
-    fontSize: 11,
-    marginBottom: 6,
-    padding: 6,
-    lineHeight: 20,
-    textAlign: 'center'
-  },
 
   input: {
     width: '100%',

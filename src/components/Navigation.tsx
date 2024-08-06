@@ -14,28 +14,28 @@ function MyTabs() {
                 name="Inicio" 
                 component={HomeLoader} 
                 options={{ 
-                    tabBarStyle: { display: 'none' } // Oculta la barra de pestañas
+                    tabBarStyle: { display: 'none' } 
                 }} 
             />
             <Tab.Screen 
                 name="Registrarse" 
                 component={Register} 
                 options={{ 
-                    tabBarStyle: { display: 'flex' } // Muestra la barra de pestañas
+                    tabBarStyle: { display: 'flex' } 
                 }} 
             />
             <Tab.Screen 
                 name="Iniciar Sesion" 
                 component={Login} 
                 options={{ 
-                    tabBarStyle: { display: 'flex' } // Muestra la barra de pestañas
+                    tabBarStyle: { display: 'flex' } 
                 }} 
             />
             <Tab.Screen 
                 name="Hoja de Vida" 
                 component={CV} 
                 options={{ 
-                    tabBarStyle: { display: 'flex' } // Muestra la barra de pestañas
+                    tabBarStyle: { display: 'flex' } 
                 }} 
             />
         </Tab.Navigator>

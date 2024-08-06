@@ -19,6 +19,7 @@ export const login = () => {
             <TextInput
               style={styles.input}
               placeholder='correo electronico'
+              keyboardType="email-address"
             />
 
             <TextInput
@@ -34,6 +35,7 @@ export const login = () => {
             <TextInput
               style={styles.input}
               placeholder='Contraseña'
+              secureTextEntry={true}
             />
 
 

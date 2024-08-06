@@ -1,58 +1,49 @@
-import { Text, View, StyleSheet, TextInput, Button, Image, Pressable, ImageBackground } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react';
+import { Text, View, StyleSheet, ImageBackground, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export const login = () => {
+const HomeLoader = () => {
+    const navigation = useNavigation();
+
+    const handlePress = () => {
+        navigation.navigate('Iniciar Sesion');
+    };
 
     return (
-
-
         <View style={styles.container}>
-
             <View style={styles.imgBackgroundContainer}>
-                <ImageBackground source={require('../../assets/img/React.png')} resizeMode='cover' style={styles.img}></ImageBackground>
+                <ImageBackground source={require('../../assets/img/React.png')} resizeMode='cover' style={styles.img} />
             </View>
-
-
             <Text style={styles.containerText}>DiegoApp</Text>
-            <Pressable style={styles.button}>Entrar en la aplicacion</Pressable>
-
-
+            <Pressable style={styles.button} onPress={handlePress}>
+                <Text style={styles.buttonText}>Entrar en la aplicacion</Text>
+            </Pressable>
         </View>
-    )
-
-}
+    );
+};
 
 const styles = StyleSheet.create({
-
-
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#111111',
     },
-
     containerText: {
         color: '#FFFFFF',
         fontSize: 60,
     },
-
     imgBackgroundContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
-
     img: {
         width: 300,
         height: 300,
-        
-
     },
-
     button: {
         backgroundColor: '#4287f5',
-        color: '#FFFFFF',
         padding: 15,
         borderRadius: 10,
         marginTop: 20,
@@ -60,15 +51,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         margin: 30,
+    },
+    buttonText: {
+        color: '#FFFFFF',
+        fontSize: 16,
     }
-
-
-
-
-
-
-
 });
 
-
-export default login
+export default HomeLoader;

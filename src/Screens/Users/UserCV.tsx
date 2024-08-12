@@ -1,13 +1,13 @@
 import { Text, View, Image, StyleSheet, ScrollView } from 'react-native'
 import React, { Component } from 'react'
 
-export const cv = () => {
+export const UserCV = () => {
     return (
 
         <View style={style.container}>
             <ScrollView>
                 <View style={style.ImgContainer}>
-                    <Image style={style.img} source={require('../../assets/img/React.png')}></Image>
+                    <Image style={style.img} source={require('../../../assets/img/React.png')}></Image>
                 </View>
 
                 <View>
@@ -142,7 +142,7 @@ const style = StyleSheet.create({
     },
 
     Header: {
-        backgroundColor: '#4287f5',
+        backgroundColor: '#00AF00',
         color: '#fff',
         padding: 10,
         margin: 20,
@@ -182,4 +182,4 @@ const style = StyleSheet.create({
 
 })
 
-export default cv
+export default UserCV

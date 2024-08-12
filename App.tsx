@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, TextInput, Button, Image } from 'react-native'
 import React, { Component } from 'react'
 import { NavigationContainer } from '@react-navigation/native';
-import MyTabs from './src/components/Navigation'
+import {MyDrawer, MyTabs} from './navigation';
 
 
 
@@ -10,8 +10,9 @@ export const App = () => {
 
   return (
     <NavigationContainer>
-      <MyTabs />
+      <MyTabs/>
     </NavigationContainer>
+
 
 
   )

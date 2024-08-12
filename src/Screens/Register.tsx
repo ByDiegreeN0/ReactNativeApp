@@ -1,7 +1,15 @@
-import { Text, View, StyleSheet, TextInput, Button, Image, ScrollView } from 'react-native'
+import { Text, View, StyleSheet, TextInput,Image, ScrollView, Pressable } from 'react-native'
 import React, { Component } from 'react'
+import { useNavigation } from '@react-navigation/native';
 
-export const login = () => {
+
+export const Register = () => {
+
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+      navigation.navigate('Iniciar Sesion');
+  };
 
   return (
 
@@ -11,11 +19,9 @@ export const login = () => {
 
 
           <View style={styles.content} >
-            <Image style={styles.image} source={require('../../assets/img/iglogo.png')}></Image>
-            <Text style={styles.title}>Registrate para ver fotos y videos de tus amigos</Text>
-            <Button
-              title="Iniciar sesión con Facebook"
-            />
+            <Image style={styles.image} source={require('../../assets/img/logoSena.png')}></Image>
+            <Text style={styles.title}>El mejor portal de empleo SENA</Text>
+          
             <TextInput
               style={styles.input}
               placeholder='correo electronico'
@@ -38,15 +44,16 @@ export const login = () => {
               secureTextEntry={true}
             />
 
+            <Pressable style={styles.registerButton} onPress={handlePress}>
+                <Text style={styles.registerText}>Registrarse</Text>
+            </Pressable>
 
-            <Button
-              title="Registrarse"
-            />
+          
 
           </View>
 
           <View style={styles.bottom}>
-            <Text>¿Tienes una cuenta? Entrar</Text>
+            <Text>¿Tienes una cuenta? <Pressable onPress={handlePress} style={styles.link}>Entrar</Pressable></Text>
           </View>
         </View>
       </ScrollView>
@@ -60,8 +67,9 @@ const styles = StyleSheet.create({
 
 
   image: {
-    width: '100%',
-    height: 80,
+    width: 200,
+    height: 200,
+    margin: 20,
   },
 
   container: {
@@ -69,6 +77,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 20,
+    padding: 20,
   },
 
   content: {
@@ -110,6 +120,27 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderLeftColor: '#ddd',
     borderRightColor: '#ddd',
+  },
+
+  registerButton: {
+    backgroundColor: '#00AF00',
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+
+  registerText: {
+    fontSize: 16,
+    color: '#fff',
+  },
+
+  link: {
+    color: '#00AF00',
+    marginTop: 10,
+    marginBottom: 10,
   }
 
 
@@ -120,4 +151,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default login
+export default Register

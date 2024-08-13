@@ -1,7 +1,16 @@
 import React from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 export const UserOffers = () => {
+
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate('Ofertas');
+};
+
   const title = 'Software Engineer';
   const position = 'Full-time';
   const salary = '$80,000/year';
@@ -54,11 +63,7 @@ export const UserOffers = () => {
         </View>
       </View>
 
-      <Pressable style={styles.button} onPress={() => console.log('Show available offers')}>
-        <Text style={{ color: '#fff', fontSize: 16, fontWeight: 'bold' }}>
-          Ver ofertas disponibles
-        </Text>
-      </Pressable>
+    
     </View>
   );
 };

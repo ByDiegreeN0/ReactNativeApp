@@ -6,15 +6,12 @@ import { FontAwesome } from '@expo/vector-icons';
 type MenuItemProps = {
   icon: string;
   title: string;
-  screen: string;
+  screen?: string; // Hacer screen opcional
+  onPress: () => void; // Cambiar a función sin argumentos
 };
 
 const UserScreen: React.FC = () => {
   const navigation = useNavigation();
-
-  const handlePress = (screen: string) => {
-    navigation.navigate(screen);  // Esto navega a la pantalla correspondiente
-  };
 
   return (
     <View style={styles.container}>
@@ -26,18 +23,18 @@ const UserScreen: React.FC = () => {
         <Image source={{ uri: 'https://via.placeholder.com/50' }} style={styles.profileImage} />
       </View>
       <View style={styles.menuContainer}>
-        <MenuItem icon="file-text" title="Mi Hoja de Vida" screen="UserCV" onPress={handlePress} />
-        <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" screen="UserOffers" onPress={handlePress} /> {/* Cambiado aquí */}
-        <MenuItem icon="cog" title="Configuración"   />
-        <MenuItem icon="sign-out" title="Cerrar sesión"  />
+        <MenuItem icon="file-text" title="Mi Hoja de Vida" onPress={() => navigation.navigate('UserCV')} />
+        <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" onPress={() => navigation.navigate('UserOffers')} />
+        <MenuItem icon="cog" title="Configuración" onPress={() => {/* Agregar acción aquí */}} />
+        <MenuItem icon="sign-out" title="Cerrar sesión" onPress={() => {/* Agregar acción aquí */}} />
       </View>
     </View>
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ icon, title, screen, onPress }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ icon, title, onPress }) => {
   return (
-    <TouchableOpacity onPress={() => onPress(screen)}>
+    <TouchableOpacity onPress={onPress}>
       <View style={styles.menuItem}>
         <FontAwesome name={icon} size={24} color="black" />
         <Text style={styles.menuItemText}>{title}</Text>
@@ -64,7 +61,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: "#00AF00"
+    color: "#00AF00",
   },
   subHeaderText: {
     fontSize: 16,
@@ -88,11 +85,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
   },
-  menuIconText: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  menuText: {
+  menuItemText: {
     marginLeft: 10,
     fontSize: 16,
   },

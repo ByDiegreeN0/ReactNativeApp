@@ -1,6 +1,7 @@
 // src/Navigation/MyStack.js
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import Register from '../Screens/Register';
 import Login from '../Screens/Login';
 import MyTabs from './TabsNavigation';
@@ -37,8 +38,11 @@ function MyStack() {
                 component={UserCV}
                 options={{ headerShown: false }} 
             />
+
+            
         </Stack.Navigator>
     );
 }
 
 export default MyStack;
+

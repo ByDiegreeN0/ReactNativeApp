@@ -7,7 +7,7 @@ export const UserCV = () => {
         <View style={style.container}>
             <ScrollView>
                 <View style={style.ImgContainer}>
-                    <Image style={style.img} source={require('../../../assets/img/React.png')}></Image>
+                    <Image style={style.img} source={require('../../../assets/img/logoSena.png')}></Image>
                 </View>
 
                 <View>

@@ -16,13 +16,14 @@ const UserScreen: React.FC = () => {
           <Text style={styles.subHeaderText}>Desarrollador de software</Text>
         </View>
         <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} // Reemplaza con la URL de tu imagen
+          source={{ uri: 'https://via.placeholder.com/50' }} 
           style={styles.profileImage}
         />
       </View>
 
       <View style={styles.menuContainer}>
         <MenuItem icon="file-text" title="Mi Hoja de Vida" />
+        <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" /> {/* Cambiado aquí */}
         <MenuItem icon="cog" title="Configuración" />
         <MenuItem icon="sign-out" title="Cerrar sesión" />
       </View>
@@ -36,7 +37,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ icon, title }) => (
       <FontAwesome name={icon} size={24} color="black" />
       <Text style={styles.menuText}>{title}</Text>
     </View>
-    <FontAwesome name="chevron-right" size={24} color="black" />
+    <FontAwesome name="chevron-right" size={24} color="#00AF00" />
   </TouchableOpacity>
 );
 
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: "#00AF00"
   },
   subHeaderText: {
     fontSize: 16,

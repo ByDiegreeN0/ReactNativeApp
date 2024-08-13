@@ -20,13 +20,13 @@ const UserScreen: React.FC = () => {
           <Text style={styles.headerText}>Diego García</Text>
           <Text style={styles.subHeaderText}>Desarrollador de software</Text>
         </View>
-        <Image source={{ uri: 'https://via.placeholder.com/50' }} style={styles.profileImage} />
+        <Image source={require('../../../assets/img/logoSena.png')} style={styles.profileImage} />
       </View>
       <View style={styles.menuContainer}>
-        <MenuItem icon="file-text" title="Mi Hoja de Vida" onPress={() => navigation.navigate('UserCV')} />
-        <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" onPress={() => navigation.navigate('UserOffers')} />
+        <MenuItem icon="file-text" title="Mi Hoja de Vida" onPress={() => navigation.navigate('Hoja de Vida')} />
+        <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" onPress={() => navigation.navigate('Ofertas Aplicadas')} />
         <MenuItem icon="cog" title="Configuración" onPress={() => {/* Agregar acción aquí */}} />
-        <MenuItem icon="sign-out" title="Cerrar sesión" onPress={() => {/* Agregar acción aquí */}} />
+        <MenuItem icon="sign-out" title="Cerrar sesión" onPress={() => navigation.navigate('Iniciar Sesion')} />
       </View>
     </View>
   );
@@ -36,7 +36,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ icon, title, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.menuItem}>
-        <FontAwesome name={icon} size={24} color="black" />
+        <FontAwesome  name={icon} size={24} color="#00AF00" />
         <Text style={styles.menuItemText}>{title}</Text>
       </View>
     </TouchableOpacity>

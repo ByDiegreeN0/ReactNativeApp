@@ -7,6 +7,7 @@ import Login from '../Screens/Login';
 import MyTabs from './TabsNavigation';
 import UserCV from '../Screens/Users/UserCV';
 import UserOffers from '../Screens/Users/UserOffers';
+import UserDashboard from '../Screens/Users/UserDashboard';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +38,12 @@ function MyStack() {
                 name="UserCV"
                 component={UserCV}
                 options={{ headerShown: false }} 
+            />
+
+            <Stack.Screen 
+            name="Dashboard"
+            component={UserDashboard}
+            
             />
 
             

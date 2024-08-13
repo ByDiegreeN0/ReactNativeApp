@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Pressable } from 'react-native';
+import { Text, View, StyleSheet, Pressable, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -19,50 +19,53 @@ export const UserOffers = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.mainTitle}>Ofertas Aplicadas</Text>
-      <View style={styles.offerContainer}>
-        <Text style={styles.offerTitle}>{title}</Text>
-        <Text style={styles.offerText}>{position}</Text>
-        <Text style={styles.offerTitle}>Salario: {salary}</Text>
-        <Text style={styles.offerText}>Ciudad: {city}</Text>
+    <ScrollView>
+    <Text style={styles.mainTitle}>Ofertas Aplicadas</Text>
+    <View style={styles.offerContainer}>
+      <Text style={styles.offerTitle}>{title}</Text>
+      <Text style={styles.offerText}>{position}</Text>
+      <Text style={styles.offerTitle}>Salario: {salary}</Text>
+      <Text style={styles.offerText}>Ciudad: {city}</Text>
 
-        <View style={styles.offerFechaContainer}>
-          <Text>Fecha de aplicación: {date}</Text>
-        </View>
-
-        <View style={styles.statusContainer}>
-          <Text style={styles.statusText}>Estado: En proceso</Text>
-        </View>
-      </View>
-      <View style={styles.offerContainer}>
-        <Text style={styles.offerTitle}>{title}</Text>
-        <Text style={styles.offerText}>{position}</Text>
-        <Text style={styles.offerTitle}>Salario: {salary}</Text>
-        <Text style={styles.offerText}>Ciudad: {city}</Text>
-
-        <View style={styles.offerFechaContainer}>
-          <Text>Fecha de aplicación: {date}</Text>
-        </View>
-
-        <View style={styles.statusContainer}>
-          <Text style={styles.statusText}>Estado: En proceso</Text>
-        </View>
-      </View>
-      <View style={styles.offerContainer}>
-        <Text style={styles.offerTitle}>{title}</Text>
-        <Text style={styles.offerText}>{position}</Text>
-        <Text style={styles.offerTitle}>Salario: {salary}</Text>
-        <Text style={styles.offerText}>Ciudad: {city}</Text>
-
-        <View style={styles.offerFechaContainer}>
-          <Text>Fecha de aplicación: {date}</Text>
-        </View>
-
-        <View style={styles.statusContainer}>
-          <Text style={styles.statusText}>Estado: En proceso</Text>
-        </View>
+      <View style={styles.offerFechaContainer}>
+        <Text>Fecha de aplicación: {date}</Text>
       </View>
 
+      <View style={styles.statusContainer}>
+        <Text style={styles.statusText}>Estado: En proceso</Text>
+      </View>
+    </View>
+    <View style={styles.offerContainer}>
+      <Text style={styles.offerTitle}>{title}</Text>
+      <Text style={styles.offerText}>{position}</Text>
+      <Text style={styles.offerTitle}>Salario: {salary}</Text>
+      <Text style={styles.offerText}>Ciudad: {city}</Text>
+
+      <View style={styles.offerFechaContainer}>
+        <Text>Fecha de aplicación: {date}</Text>
+      </View>
+
+      <View style={styles.statusContainer}>
+        <Text style={styles.dangerText}>Estado: Finalizado / No Seleccionado</Text>
+      </View>
+    </View>
+    <View style={styles.offerContainer}>
+      <Text style={styles.offerTitle}>{title}</Text>
+      <Text style={styles.offerText}>{position}</Text>
+      <Text style={styles.offerTitle}>Salario: {salary}</Text>
+      <Text style={styles.offerText}>Ciudad: {city}</Text>
+
+      <View style={styles.offerFechaContainer}>
+        <Text>Fecha de aplicación: {date}</Text>
+      </View>
+
+      <View style={styles.statusContainer}>
+        <Text style={styles.dangerText}>Estado: Finalizado / No Seleccionado</Text>
+      </View>
+    </View>
+
+    </ScrollView>
+  
     
     </View>
   );
@@ -115,10 +118,25 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignSelf: 'flex-start',
   },
+
   statusText: {
     color: '#00AF00',
     fontWeight: 'bold',
   },
+
+  dangerContainer: {
+    padding: 8,
+    borderRadius: 5,
+    alignSelf: 'flex-start',
+    backgroundColor: '#d62828',
+
+  },
+
+  dangerText: {
+    color: '#d62828',
+    fontWeight: 'bold',
+  },
+
   button: {
     backgroundColor: '#00AF00',
     padding: 10,

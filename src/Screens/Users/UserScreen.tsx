@@ -23,6 +23,7 @@ const UserScreen: React.FC = () => {
         <Image source={require('../../../assets/img/logoSena.png')} style={styles.profileImage} />
       </View>
       <View style={styles.menuContainer}>
+        <MenuItem icon="dashboard" title="Dashboard" onPress={() => navigation.navigate('Dashboard')} />
         <MenuItem icon="file-text" title="Mi Hoja de Vida" onPress={() => navigation.navigate('Hoja de Vida')} />
         <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" onPress={() => navigation.navigate('Ofertas Aplicadas')} />
         <MenuItem icon="cog" title="Configuración" onPress={() => {/* Agregar acción aquí */}} />
@@ -79,7 +80,6 @@ const styles = StyleSheet.create({
   },
   menuItem: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: 15,
     borderBottomWidth: 1,

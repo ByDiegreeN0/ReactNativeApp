@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Pressable } from 'react-native';
+import { Text, View, StyleSheet, Pressable, Alert } from 'react-native';
 
 const Offers = ({ title, position, salary, city, date}) => {
 
@@ -14,7 +14,7 @@ const Offers = ({ title, position, salary, city, date}) => {
       <View style={styles.offerFechaContainer}>
         <Text>Fecha: {date}</Text>
       </View>
-
+  
       <Pressable style={styles.offerButton}>
         <Text style={styles.offerButtonText}>Aplicar Ahora</Text>
       </Pressable>

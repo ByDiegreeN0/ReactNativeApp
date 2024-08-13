@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 import React, { Component } from 'react'
 
 export class Offers extends Component {
@@ -12,3 +12,7 @@ export class Offers extends Component {
 }
 
 export default Offers
+
+const styles = StyleSheet.create({
+  
+})

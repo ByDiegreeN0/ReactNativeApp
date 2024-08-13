@@ -49,16 +49,6 @@ function MyTabs() {
     );
 }
 
-const Drawer = createDrawerNavigator();
 
-function MyDrawer() {
-    return (
-        <Drawer.Navigator>
-            <Drawer.Screen name="Dashboard" component={UserScreen} />
-            <Drawer.Screen name="Hoja de Vida" component={UserCV} />
-            <Drawer.Screen name="Ofertas Aplicadas" component={UserCV} />
-        </Drawer.Navigator>
-    );
-}
 
-export { MyTabs, MyDrawer };
+export { MyTabs};

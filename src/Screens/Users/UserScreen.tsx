@@ -1,45 +1,50 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 
 type MenuItemProps = {
   icon: string;
   title: string;
+  screen: string;
 };
 
 const UserScreen: React.FC = () => {
+  const navigation = useNavigation();
+
+  const handlePress = (screen: string) => {
+    navigation.navigate(screen);  // Esto navega a la pantalla correspondiente
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTextContainer}>
-          <Text style={styles.headerText}>Diego Garcia</Text>
+          <Text style={styles.headerText}>Diego García</Text>
           <Text style={styles.subHeaderText}>Desarrollador de software</Text>
         </View>
-        <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} 
-          style={styles.profileImage}
-        />
+        <Image source={{ uri: 'https://via.placeholder.com/50' }} style={styles.profileImage} />
       </View>
-
       <View style={styles.menuContainer}>
-        <MenuItem icon="file-text" title="Mi Hoja de Vida" />
-        <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" /> {/* Cambiado aquí */}
-        <MenuItem icon="cog" title="Configuración" />
-        <MenuItem icon="sign-out" title="Cerrar sesión" />
+        <MenuItem icon="file-text" title="Mi Hoja de Vida" screen="UserCV" onPress={handlePress} />
+        <MenuItem icon="newspaper-o" title="Ofertas Aplicadas" screen="UserOffers" onPress={handlePress} /> {/* Cambiado aquí */}
+        <MenuItem icon="cog" title="Configuración"   />
+        <MenuItem icon="sign-out" title="Cerrar sesión"  />
       </View>
     </View>
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ icon, title }) => (
-  <TouchableOpacity style={styles.menuItem}>
-    <View style={styles.menuIconText}>
-      <FontAwesome name={icon} size={24} color="black" />
-      <Text style={styles.menuText}>{title}</Text>
-    </View>
-    <FontAwesome name="chevron-right" size={24} color="#00AF00" />
-  </TouchableOpacity>
-);
+const MenuItem: React.FC<MenuItemProps> = ({ icon, title, screen, onPress }) => {
+  return (
+    <TouchableOpacity onPress={() => onPress(screen)}>
+      <View style={styles.menuItem}>
+        <FontAwesome name={icon} size={24} color="black" />
+        <Text style={styles.menuItemText}>{title}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

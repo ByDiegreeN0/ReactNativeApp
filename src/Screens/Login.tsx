@@ -1,9 +1,13 @@
 import { Text, View, StyleSheet, TextInput,Image, ScrollView, Pressable } from 'react-native'
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-export const Login = () => {
+export default function Login() {
+
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
 
   
   const navigation = useNavigation();
@@ -11,6 +15,15 @@ export const Login = () => {
   const handlePress = () => {
       navigation.navigate('Ofertas');
   };
+
+  const handleButtonPress = async(userEmail, userPassword) => {
+
+    const data = {
+      email: userEmail,
+      password: userPassword
+    }
+    await AsyncStorage.setItem('userEmail', userEmail);
+  }
 
   return (
 
